@@ -203,6 +203,25 @@
                 </v-card-text>
               </v-card>
             </v-col>
+            <v-col v-if="sourceData['sqlite-url']" cols=12 xl=6>
+              <v-card elevation="4" class="ml-2 mr-2">
+                <v-card-title>
+                  <span> SQLite </span>
+                  <v-chip
+                    class="ml-auto"
+                    color="deep-purple darken-4"
+                    text-color="white"
+                    :href="sourceData['sqlite-url']"
+                  >
+                  Download Sqlite
+                  </v-chip>
+                </v-card-title>
+                <v-card-text>
+                  <p> Contains sqlite database file. with each table in the table list. </p>
+                  <p> Use local tool such as <a href="https://sqlitebrowser.org/">sqlitebrowser</a> to open </p>
+                </v-card-text>
+              </v-card>
+            </v-col>
             <v-col cols=12 xl=6>
               <v-card elevation="4" class="ml-2 mr-2">
                 <v-card-title>

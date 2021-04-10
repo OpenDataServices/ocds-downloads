@@ -68,6 +68,16 @@
           </v-chip>
           <v-chip
             class="ma-1"
+            color="deep-purple darken-4"
+            text-color="white"
+            :small=true
+            :active="Boolean(item['sqlite-url'])"
+            :href="item['sqlite-url']"
+          >
+          sqlite
+          </v-chip>
+          <v-chip
+            class="ma-1"
             color="deep-orange darken-3"
             text-color="white"
             :small=true
