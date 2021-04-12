@@ -20,7 +20,7 @@
 
           <router-link to="/" v-slot="{href, navigate}" custom >
             <v-btn text class="title mr-10 normal-case" :href="href" @click="navigate">
-              OCDS Data Downloads
+              OCDS Downloads
             </v-btn>
           </router-link>
 
