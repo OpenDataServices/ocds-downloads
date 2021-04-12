@@ -11,7 +11,9 @@
               </v-card-title>
               <v-card-text>
                 <p> This page contains downloads for <span class="capitalize-source">{{name.replace(/_/g, ' ')}}</span> </p>
+                <p> This data is from {{sourceData["scraper_info-category"]}} </p>
                 <p> Data gathered using the {{ name }} scraper on {{sourceData["field_info-latest_date"]}} </p>
+                <p> More info on the source can be found in <a :href="sourceData['scraper_info-docs_link']"> Collect Docs </a></p>
                 <v-dialog :scrollable=true width=800 v-model="fetchInfoDialog">
                   <template v-slot:activator="{ on, attrs }">
                     <a
@@ -97,7 +99,7 @@
                           :key="table.object_type"
                         >
                           <td><a href="#" v-scroll-to="'#table-' + table.object_type"> {{ table.object_type }} </a></td>
-                          <td>{{ sourceData['table_stats-' + table.object_type] }}</td>
+                          <td>{{ sourceData['table_stats-' + table.object_type].toLocaleString() }}</td>
                         </tr>
                       </tbody>
                     </template>
@@ -290,7 +292,7 @@
                             <td>{{ field.name }}</td>
                             <td>{{ field.type }}</td>
                             <td>{{ field.schema_type }}</td>
-                            <td>{{ fieldInfo[table.object_type][field.name].count }}</td>
+                            <td>{{ fieldInfo[table.object_type][field.name].count.toLocaleString() }}</td>
                             <td> <vue-markdown :source="replaceVersionLang(field.description)"></vue-markdown></td>
                           </tr>
                         </tbody>

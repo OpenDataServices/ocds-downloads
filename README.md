@@ -1,4 +1,4 @@
-# ocdsdata-dashboard
+# ocds-downloads
 
 ## Project setup
 ```

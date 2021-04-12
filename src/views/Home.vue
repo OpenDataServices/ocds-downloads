@@ -55,6 +55,9 @@
         <template v-slot:item.job_info-latest_info-finish_time="{ item }">
           {{ day_from_now(item['job_info-latest_info-finish_time']) }}
         </template>
+        <template v-slot:item.table_stats-release="{ item }">
+          {{ (item['table_stats-release'] || 0).toLocaleString() }}
+        </template>
         <template v-slot:item.download_links="{ item }">
           <v-chip
             class="ma-1"
@@ -133,7 +136,9 @@ export default {
   data () {
     return {
       headers: [
-        { text: 'OCDS Source', value: 'source' },
+        { text: 'OCDS Source', value: 'source', width: 200 },
+        { text: 'Country/Category', value: 'scraper_info-category' },
+        { text: 'Info', value: 'scraper_info-extra_info-Domain', width: 200 },
         { text: 'Contracting Processes', value: 'table_stats-release' },
         { text: 'Download Formats', value: 'download_links', sortable: false },
         { text: 'Last Fetched', value: 'job_info-latest_info-finish_time' }
