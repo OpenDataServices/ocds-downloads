@@ -373,8 +373,6 @@ export default {
       if (!sourceData) {
         return
       }
-      console.log(sourceData)
-      console.log(sourceData.notebookIdFile)
       const response = await axios.get(sourceData.notebookIdFile)
       if (response.data.id) {
         this.noteBookUrl = 'https://colab.research.google.com/drive/' + response.data.id
