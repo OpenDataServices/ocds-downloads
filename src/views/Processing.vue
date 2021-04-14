@@ -4,10 +4,10 @@
       <v-col cols=12 xl=6>
         <v-card>
           <v-card-title>
-            About
+            Processing Pipeline
           </v-card-title>
-          <v-card-text>
-           <vue-markdown :source="aboutText"></vue-markdown>
+          <v-card-text class="md-content">
+           <vue-markdown :source="processingText"></vue-markdown>
           </v-card-text>
         </v-card>
       </v-col>
@@ -18,7 +18,7 @@
 
 <script>
 import VueMarkdown from 'vue-markdown-render'
-import { aboutText } from '@/text'
+import { processingText } from '@/text'
 
 export default {
   components: {
@@ -26,7 +26,7 @@ export default {
   },
   data () {
     return {
-      aboutText
+      processingText
     }
   }
 }

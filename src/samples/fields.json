@@ -1,0 +1,36 @@
+[
+  {
+    "name": "_link",
+    "type": "string",
+    "description": "Link to this row that can be found in other rows"
+  },
+  {
+    "name": "_link_release",
+    "type": "string",
+    "description": "Link to the release row that this row relates to"
+  },
+  {
+    "name": "ocid",
+    "type": "string",
+    "description": "A globally unique identifier for this Open Contracting Process. Composed of an ocid prefix and an identifier for the contracting process. For more information see the [Open Contracting Identifier guidance](https://standard.open-contracting.org/{{version}}/{{lang}}/schema/identifiers/)",
+    "schema_type": "string"
+  },
+  {
+    "name": "id",
+    "type": "string",
+    "description": "An identifier for this particular release of information. A release identifier must be unique within the scope of its related contracting process (defined by a common ocid). A release identifier must not contain the # character.",
+    "schema_type": "string"
+  },
+  {
+    "name": "date",
+    "type": "string",
+    "description": "The date this information was first released, or published.",
+    "schema_type": "string"
+  },
+  {
+    "name": "tag",
+    "type": "array",
+    "description": "One or more values from the closed [releaseTag](https://standard.open-contracting.org/{{version}}/{{lang}}/schema/codelists/#release-tag) codelist. Tags can be used to filter releases and to understand the kind of information that releases might contain.",
+    "schema_type": "array"
+  }
+]
