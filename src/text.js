@@ -1,7 +1,8 @@
 const homeText = `
-Choose a data source and format to download. Click on each source for more information about its tables, fields and download formats.
 
-This website collects data published using the [Open Contracting Data Standard (OCDS)](https://standard.open-contracting.org/), converts it to a tabular structure and provides downloads in different formats. Learn more about [using the data](/using).
+This website collects data published using the [Open Contracting Data Standard (OCDS)](https://standard.open-contracting.org/), converts it to a tabular structure and provides downloads in different formats.
+
+Choose a data source and format to download. Click on each source for more information about its tables, fields and download formats. Learn more about [using the data](/using).
 
 Data is collected weekly using [Kingfisher Collect](https://kingfisher-collect.readthedocs.io/en/latest/) and processed using [Apache Airflow](https://airflow.apache.org/). Check the [Airflow dashboard](https://ocdsdata.opendataservices.coop/) for more information on the status of the pipeline for each data source. Learn more about the [processing pipeline](/processing).
 
@@ -28,7 +29,7 @@ A \`.zip\` file containing:
   sqlite: `
 A \`.sqlite\` file containing each table in the table list.
 
-You can use a tool like [DB Browser for SQLite](https://sqlitebrowser.org/) to view the data open the file.`,
+You can use a tool like [DB Browser for SQLite](https://sqlitebrowser.org/) to open the file.`,
 
   bigquery: `
   A BigQuery project containing data from this source.
@@ -59,9 +60,9 @@ const aboutText = `
 
 This website was created as a research project by [Open Data Services Co-operative](https://opendataservices.coop/).
 
-The aim of this website is to test approaches in providing:
+The aim of this website is to test approaches to providing:
 
-* Acccess to open data in quick-to-use formats, including BigQuery and Colaboratory Notebooks.
+* Access to open data in quick-to-use formats, including BigQuery and Colaboratory Notebooks.
 * Easy-to-use tabular representations of JSON Schema defined JSON data.
 * Transparent processing pipelines that can deal with large datasets.
 `
@@ -71,7 +72,12 @@ export { aboutText }
 const useText = [`
 The data available on this website is a tabular representation of data collected from OCDS publishers. The tabular representation includes some extra fields to make dealing with one-to-many relationships easier. You can download the  data and analyse it using a database, spreadsheet or other analytical tool.
 
-This page describes the fields contained within the data, the structure of the data and how to join data from different tables.
+This page describes:
+
+* The [fields](#fields) contained within the data.
+* The [structure](#structure) of the data.
+* [How to join data](#joins) from different tables.
+* [How to access raw JSON data](#raw-json-data).
 
 ### Fields
 
