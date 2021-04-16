@@ -56,16 +56,16 @@ You need to create a copy of the notebook to start using it.`
 
 export { sourceText }
 
-const aboutText = `
-
+const aboutText = [`
 This website was created as a research project by [Open Data Services Co-operative](https://opendataservices.coop/).
+`,
 
-The aim of this website is to test approaches to providing:
+`The aim of this website is to test approaches to providing:
 
 * Access to open data in quick-to-use formats, including BigQuery and Colaboratory Notebooks.
 * Easy-to-use tabular representations of JSON Schema defined JSON data.
 * Transparent processing pipelines that can deal with large datasets.
-`
+`]
 
 export { aboutText }
 
@@ -77,9 +77,10 @@ This page describes:
 * The [fields](#fields) contained within the data.
 * The [structure](#structure) of the data.
 * [How to join data](#joins) from different tables.
-* [How to access raw JSON data](#raw-json-data).
+* [How to access raw JSON data](#raw-json-data).`,
 
-### Fields
+`
+### Fields <span id="fields"></span>
 
 The fields included in the data vary by data source. Data sources can include fields from the [OCDS schema](https://standard.open-contracting.org/latest/en/schema/release/) and [extensions](https://extensions.open-contracting.org/). They can also include additional fields specific to a particular data source.
 
@@ -89,7 +90,8 @@ Where possible, downloads include a schema with a description for each field. CS
 '<field description example>',
 `You can also refer to the data source's page for a list of its tables and fields.
 
-### Data structure
+
+### Data structure <span id="structure"></span>
 
 The data is structured according to the [tabular serialization of OCDS](https://standard.open-contracting.org/latest/en/guidance/build/serialization/#csv).
 
@@ -113,7 +115,7 @@ For convenience, the processing pipeline also:
 
 **Warning:** One award can relate to many contracts, so beware of double-counting when aggregating \`_award_\` fields in the \`contracts\` table.
 
-### Joins
+### Joins <span id="joins"></span>
 
 Each table contains a \`_link\` field. The \`_link\` field is unique within the scope of the table and is the primary key.
 
@@ -133,14 +135,14 @@ The processing pipeline creates \`_link_<table name>\` fields for all one-to-man
 * \`contracts\` to \`awards\`
 * \`buyer\`, \`tender_procuringEntity\`, \`tender_tenderers\` and \`awards_suppliers\` to \`parties\`
 
-### Raw JSON data
+### Raw JSON data <span id="raw-json-data"></span>
 
 PostgreSQL Database Dumps include an additional \`_compiled_release\` table that contains compiled releases in raw OCDS JSON format. For sources that publish individual releases, the table also contains a list of releases in raw OCDS JSON format.
 `]
 
 export { useText }
 
-const processingText = `
+const processingText = [`
 This website uses [Apache Airflow](https://airflow.apache.org/) to manage a processing pipeline. This page describes the tasks performed by the processing pipeline. In summary, for each source, the pipeline performs the following tasks:
 
 * Create a PostgreSQL database schema to store data in
@@ -153,9 +155,9 @@ This website uses [Apache Airflow](https://airflow.apache.org/) to manage a proc
 * Generate a CSV export
 * Generate an Excel export
 * Export data to BigQuery
-* Generate a PostgreSQL dump
+* Generate a PostgreSQL dump`,
 
-### Scheduling
+`### Scheduling
 
 The processing pipeline for each source runs once per week. Check the [Airflow dashboard](https://ocdsdata.opendataservices.coop/home) for details of the schedule.
 
@@ -233,6 +235,6 @@ See [Data structure](/use-the-data) for more information on the structure of the
 * Rename the schema to the name of the source, e.g. \`zambia_process\` to \`zambia\`.
 * Dump the data to online storage.
 * Generate a Jupyter Notebook and upload to Google Drive.
-`
+`]
 
 export { processingText }

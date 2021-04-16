@@ -1,17 +1,23 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols=12 xl=6>
+      <v-col cols=12 xl=3>
         <v-card>
           <v-card-title>
             Processing Pipeline
           </v-card-title>
           <v-card-text class="md-content">
-           <vue-markdown :source="processingText"></vue-markdown>
+           <vue-markdown :source="processingText[0]"></vue-markdown>
           </v-card-text>
         </v-card>
       </v-col>
-      <v-spacer/>
+      <v-col cols=12 xl=9>
+        <v-card>
+          <v-card-text class="md-content">
+           <vue-markdown :source="processingText[1]"></vue-markdown>
+          </v-card-text>
+        </v-card>
+      </v-col>
     </v-row>
   </v-container>
 </template>

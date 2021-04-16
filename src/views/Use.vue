@@ -1,14 +1,20 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols=12 xl=6>
+      <v-col cols=12 xl=3>
         <v-card>
           <v-card-title>
             Use the Data
           </v-card-title>
           <v-card-text class="md-content">
-            <vue-markdown :source="useText[0]"></vue-markdown>
-
+            <vue-markdown :source="useText[0]" :options="{html: true}"></vue-markdown>
+          </v-card-text>
+        </v-card>
+      </v-col>
+      <v-col cols=12 xl=9>
+        <v-card>
+          <v-card-text class="md-content">
+            <vue-markdown :source="useText[1]" :options="{html: true}"></vue-markdown>
             <span class="text-subtitle-2">
                Sample Field Information
             </span>
@@ -47,7 +53,7 @@
             </v-simple-table>
             <v-divider class="mb-4"/>
 
-            <vue-markdown :source="useText[2]"></vue-markdown>
+            <vue-markdown :source="useText[3]" :options="{html: true}"></vue-markdown>
 
             <span class="text-subtitle-2">
                Sample Release Table
@@ -74,7 +80,7 @@
             </v-simple-table>
             <v-divider class="mb-4"/>
 
-            <vue-markdown :source="useText[4]"></vue-markdown>
+            <vue-markdown :source="useText[5]" :options="{html: true}"></vue-markdown>
 
             <span class="text-subtitle-2">
                Sample Awards Table
@@ -101,7 +107,7 @@
             </v-simple-table>
             <v-divider class="mb-4"/>
 
-            <vue-markdown :source="useText[6]"></vue-markdown>
+            <vue-markdown :source="useText[7]" :options="{html: true}"></vue-markdown>
 
           </v-card-text>
         </v-card>
