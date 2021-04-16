@@ -15,7 +15,7 @@
 
                 <p> Read the <a :href="sourceData['scraper_info-docs_link']">Kingfisher Collect Spider Documentation</a> for more information about this data source.
                 <p> This page contains downloads for <span class="capitalize-source">{{name.replace(/_/g, ' ')}}</span> </p>
-                <p><span v-if="originalSourceData.job_info.latest_info.fileerror_count">There were 18 data collection errors, so the data may be incomplete.</span>
+                <p><span v-if="originalSourceData.job_info.latest_info.fileerror_count">There were {{ originalSourceData.job_info.latest_info.fileerror_count }} data collection errors, so the data may be incomplete.</span>
                    <span v-else> There were no data collection errors.</span>
                 <v-dialog :scrollable=true width=800 v-model="fetchInfoDialog">
                   <template v-slot:activator="{ on, attrs }">
@@ -89,7 +89,7 @@
                           v-for="table in fieldTypes"
                           :key="table.object_type"
                         >
-                          <td><a :href="'#table-' + table.object_type"> {{ table.object_type }} </a></td>
+                          <td><a v-scroll-to="{el: '#table-' + table.object_type, onDone: scrollDone}" :href="'#table-' + table.object_type"> {{ table.object_type }} </a></td>
                           <td>{{ sourceData['table_stats-' + table.object_type].toLocaleString() }}</td>
                         </tr>
                       </tbody>
@@ -307,9 +307,6 @@ export default {
       sourceText
     }
   },
-  updated: function () {
-    VueScrollTo(window.location.hash)
-  },
   computed: {
     sourceData: function () {
       return this.allData.find(x => x.source === this.name)
@@ -324,6 +321,9 @@ export default {
     this.fetchNotebook(this.sourceData)
   },
   methods: {
+    scrollDone: function (el) {
+      window.location.hash = '#' + el.id
+    },
     replaceVersionLang: function (text) {
       text = text.replace('{{lang}}', 'en')
       text = text.replace('{{version}}', '1.1')
@@ -352,6 +352,7 @@ export default {
       }
       const response = await axios.get(fieldTypesData['field_types-latest'])
       this.fieldTypes = response.data
+      this.$nextTick(() => VueScrollTo.scrollTo(window.location.hash))
     },
     fetchNotebook: async function (sourceData) {
       if (!sourceData) {

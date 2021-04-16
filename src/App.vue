@@ -4,9 +4,8 @@
       app
       color="red"
       absolute
-      height=20
     >
-      <span class="white--text">Tool in alpha. Please do not rely on data within this page to be updated regularly. </span>
+      <span class="white--text">Tool in alpha. Do not rely on data within this page to be updated. </span>
     </v-system-bar>
     <v-app-bar
       app
@@ -14,29 +13,63 @@
       color="white"
       flat
     >
+    <v-navigation-drawer
+      app
+      v-model="drawer"
+      absolute
+      temporary
+    >
+
+      <router-link to="/" v-slot="{href, navigate}" custom >
+        <v-btn text class="title normal-case mb-4" :href="href" @click="navigate">
+          OCDS Downloads
+        </v-btn>
+      </router-link>
+
+      <router-link to="/use-the-data" v-slot="{href, navigate}" custom>
+        <v-btn text :href="href" @click="navigate">
+          Use The Data
+        </v-btn>
+      </router-link>
+
+      <router-link to="/processing-pipeline" v-slot="{href, navigate}" custom>
+        <v-btn text :href="href" @click="navigate">
+          Processing Pipeline
+        </v-btn>
+      </router-link>
+
+      <router-link to="/about" v-slot="{href, navigate}" custom>
+        <v-btn text :href="href" @click="navigate">
+          About
+        </v-btn>
+      </router-link>
+
+    </v-navigation-drawer>
+
+    <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     <v-row>
       <v-col>
         <v-container class="py-0 fill-height">
 
-          <router-link to="/" v-slot="{href, navigate}" custom >
+          <router-link to="/" v-slot="{href, navigate}" custom>
             <v-btn text class="title mr-10 normal-case" :href="href" @click="navigate">
               OCDS Downloads
             </v-btn>
           </router-link>
 
-          <router-link to="/use-the-data" v-slot="{href, navigate}" custom>
+          <router-link to="/use-the-data" v-slot="{href, navigate}" custom class="hidden-sm-and-down">
             <v-btn text :href="href" @click="navigate">
               Use The Data
             </v-btn>
           </router-link>
 
-          <router-link to="/processing-pipeline" v-slot="{href, navigate}" custom>
+          <router-link to="/processing-pipeline" v-slot="{href, navigate}" custom class="hidden-sm-and-down">
             <v-btn text :href="href" @click="navigate">
               Processing Pipeline
             </v-btn>
           </router-link>
 
-          <router-link to="/about" v-slot="{href, navigate}" custom>
+          <router-link to="/about" v-slot="{href, navigate}" custom class="hidden-sm-and-down">
             <v-btn text :href="href" @click="navigate">
               About
             </v-btn>
@@ -62,6 +95,8 @@ import flatten from 'flat'
 export default {
   name: 'App',
   data: () => ({
+    drawer: false,
+    menuSelected: '',
     allData: [],
     originalData: []
   }),
