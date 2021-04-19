@@ -2,9 +2,9 @@ const homeText = `
 
 This website collects data published using the [Open Contracting Data Standard (OCDS)](https://standard.open-contracting.org/), converts it to a tabular structure and provides downloads in different formats.
 
-Choose a data source and format to download. Click on each source for more information about its tables, fields and download formats. Learn more about [using the data](/using).
+Choose a data source and format to download. Click on each source for more information about its tables, fields and download formats. Learn more about [using the data](/use-the-data).
 
-Data is collected weekly using [Kingfisher Collect](https://kingfisher-collect.readthedocs.io/en/latest/) and processed using [Apache Airflow](https://airflow.apache.org/). Check the [Airflow dashboard](https://ocdsdata.opendataservices.coop/) for more information on the status of the pipeline for each data source. Learn more about the [processing pipeline](/processing).
+Data is collected weekly using [Kingfisher Collect](https://kingfisher-collect.readthedocs.io/en/latest/) and processed using [Apache Airflow](https://airflow.apache.org/). Check the [Airflow dashboard](https://ocdsdata.opendataservices.coop/) for more information on the status of the pipeline for each data source. Learn more about the [processing pipeline](/processing-pipeline).
 
 This website is in alpha and is maintained on best-efforts basis.
 `
@@ -58,6 +58,8 @@ export { sourceText }
 
 const aboutText = [`
 This website was created as a research project by [Open Data Services Co-operative](https://opendataservices.coop/).
+
+See code and contribute on github for the [processing pipleline](https://github.com/OpenDataServices/ocdsdata) and [this website](https://github.com/OpenDataServices/ocds-downloads).
 `,
 
 `The aim of this website is to test approaches to providing:
