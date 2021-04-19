@@ -204,7 +204,7 @@
                 </v-card-text>
               </v-card>
             </v-col>
-            <v-col cols=12 xl=6>
+            <v-col v-if="sourceData['sqlite_gz-url']" cols=12 xl=6>
               <v-card elevation="4" class="ml-2 mr-2">
                 <v-card-title>
                   <span> Google Colaboratory Notebook </span>
@@ -212,7 +212,6 @@
                     class="ml-auto"
                     color="green darken-3"
                     text-color="white"
-                    :active="Boolean(noteBookUrl)"
                     :href="noteBookUrl"
                   >
                   Colab Notebook

@@ -47,7 +47,7 @@ An \`.xlsx\` file containing:
 * a \`Field Information\` sheet with a list of fields and descriptions for each table.`,
 
   notebook: `
-A hosted Jupyter Notebook that sets up a PostgreSQL environment and loads data from this source.
+A hosted Jupyter Notebook that sets up a SQL environment by copying an SQLite database to the notebook.
 
 Follow the instructions in the notebook to query the data.
 
