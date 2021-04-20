@@ -326,6 +326,8 @@ export default {
     replaceVersionLang: function (text) {
       text = text.replace('{{lang}}', 'en')
       text = text.replace('{{version}}', '1.1')
+      // temporary change in text before scrapers update
+      text = text.replace('Link to this row that can be found in other rows', 'Link to this row that can be found in other tables')
       return text
     },
     fetchFieldInfo: async function (fieldInfoData) {
