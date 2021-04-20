@@ -2,7 +2,7 @@
   {
     "name": "_link",
     "type": "string",
-    "description": "Link to this row that can be found in other rows"
+    "description": "Link to this row that can be found in other tables"
   },
   {
     "name": "_link_release",
