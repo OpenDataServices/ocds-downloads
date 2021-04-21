@@ -47,11 +47,14 @@ An \`.xlsx\` file containing:
 * a \`Field Information\` sheet with a list of fields and descriptions for each table.`,
 
   notebook: `
-A hosted Jupyter Notebook that sets up a SQL environment by copying an SQLite database to the notebook.
+A Jupyter Notebook that sets up a SQL environment by copying an SQLite database to the notebook.
+
+Download \`ipynb\` file by clicking the \`Jupyter\` link.  This can be run using classic Jupyter notebook or with JupyterLab.
+
+Click \`Colab\` link to open notebook in Google Colab, a free online service that runs notebooks. You will need to create a copy of the notebook to start using it.
 
 Follow the instructions in the notebook to query the data.
-
-You need to create a copy of the notebook to start using it.`
+`
 }
 
 export { sourceText }

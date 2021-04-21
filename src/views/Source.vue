@@ -107,6 +107,33 @@
             Formats
           </v-card-title>
           <v-row :dense=true>
+            <v-col v-if="sourceData['sqlite_gz-url']" cols=12 xl=6>
+              <v-card elevation="4" class="ml-2 mr-2">
+                <v-card-title>
+                  <span> Notebooks </span>
+                  <span class="ml-auto">
+                    <v-chip
+                      color="green darken-3"
+                      text-color="white"
+                      :href="sourceData['ipynb-url']"
+                    >
+                    Jupyter
+                    </v-chip>
+                    <v-chip
+                      class="ml-1"
+                      color="grey darken-3"
+                      text-color="white"
+                      :href="noteBookUrl"
+                    >
+                    Colab
+                    </v-chip>
+                  </span>
+                </v-card-title>
+                <v-card-text>
+                  <vue-markdown :source="sourceText.notebook"></vue-markdown>
+                </v-card-text>
+              </v-card>
+            </v-col>
             <v-col cols=12 xl=6>
               <v-card elevation="4" class="ml-2 mr-2">
                 <v-card-title>
@@ -201,24 +228,6 @@
                 </v-card-title>
                 <v-card-text>
                   <vue-markdown :source="sourceText.sqlite"></vue-markdown>
-                </v-card-text>
-              </v-card>
-            </v-col>
-            <v-col v-if="sourceData['sqlite_gz-url']" cols=12 xl=6>
-              <v-card elevation="4" class="ml-2 mr-2">
-                <v-card-title>
-                  <span> Google Colaboratory Notebook </span>
-                  <v-chip
-                    class="ml-auto"
-                    color="green darken-3"
-                    text-color="white"
-                    :href="noteBookUrl"
-                  >
-                  Colab Notebook
-                  </v-chip>
-                </v-card-title>
-                <v-card-text>
-                  <vue-markdown :source="sourceText.notebook"></vue-markdown>
                 </v-card-text>
               </v-card>
             </v-col>
