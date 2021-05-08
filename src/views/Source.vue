@@ -23,16 +23,33 @@
                       v-bind="attrs"
                       v-on="on"
                     >
-                      View the Kingfisher Collect Stats for more information.
+                      View the processing pipeline logs and collection stats for more information.
                     </a>
                   </template>
 
                   <v-card>
                     <v-card-title>
-                      Kingfisher Collect Stats
+                      Processing Logs and Stats
                     </v-card-title>
+                    <v-card-text style="height: 800px;">
+                      <v-card-title>
+                        Latest Log Files From Processing Pipeline
+                      </v-card-title>
+                      <v-card-text>
+                        <p> These are links to the key log files of the processing pipeline. They can be looked at to assess data completeness. </p>
+                        <ul>
+                          <li v-for="name in key_log_files" :key="name">
+                            {{name}} <a :href="originalSourceData.latest_logs[name]" target="_blank"> log file </a>
+                          </li>
+                        </ul>
+                      </v-card-text>
 
-                    <v-card-text style="height: 500px;">
+                      <v-card-title>
+                        Collection Stats
+                      </v-card-title>
+                      <v-card-text>
+                      <p> These are stats collected when gathering data from the publishers website. </p>
+                      </v-card-text>
                       <v-simple-table :dense=true>
                         <template v-slot:default>
                           <tbody>
@@ -312,7 +329,8 @@ export default {
       fieldTypes: [],
       noteBookUrl: '',
       fetchInfoDialog: false,
-      sourceText
+      sourceText,
+      key_log_files: ['scrape', 'compile_releases', 'create_base_tables', 'release_object', 'schema_analysis', 'postgres_tables']
     }
   },
   computed: {
