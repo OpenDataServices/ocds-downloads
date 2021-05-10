@@ -133,6 +133,7 @@
                       color="green darken-3"
                       text-color="white"
                       :href="sourceData['ipynb-url']"
+                      target="_blank"
                     >
                     Jupyter
                     </v-chip>
@@ -141,6 +142,7 @@
                       color="grey darken-3"
                       text-color="white"
                       :href="noteBookUrl"
+                      target="_blank"
                     >
                     Colab
                     </v-chip>
@@ -180,6 +182,7 @@
                     text-color="white"
                     :active="Boolean(sourceData['big_query-url'])"
                     :href="sourceData['big_query-url']"
+                    target="_blank"
                   >
                   BigQuery Console
                   </v-chip>
