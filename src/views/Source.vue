@@ -13,7 +13,7 @@
                 <p> <b> Last Updated: </b> {{sourceData["field_info-latest_date"]}} </p>
                 <p> Check which tables and fields are included in this data source and choose a format to download. </p>
 
-                <p> Read the <a :href="sourceData['scraper_info-docs_link']">Kingfisher Collect Spider Documentation</a> for more information about this data source.
+                <p> Read the <a :href="sourceData['scraper_info-docs_link']">Kingfisher Collect spider documentation</a> for more information about this data source.
                 <p> This page contains downloads for <span class="capitalize-source">{{name.replace(/_/g, ' ')}}</span> </p>
                 <p><span v-if="originalSourceData.job_info.latest_info.fileerror_count">There were {{ originalSourceData.job_info.latest_info.fileerror_count }} data collection errors, so the data may be incomplete.</span>
                    <span v-else> There were no data collection errors.</span>
@@ -226,7 +226,7 @@
                   </v-chip>
                 </v-card-title>
                 <v-card-text v-if="!sourceData['xlsx-url']">
-                  <p> No Excel download availibale as data is too large</p>
+                  <p> No Excel download available as the data is too large.</p>
                 </v-card-text>
                 <v-card-text v-if="sourceData['xlsx-url']">
                   <vue-markdown :source="sourceText.xlsx"></vue-markdown>

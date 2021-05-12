@@ -45,8 +45,8 @@
                     mdi-alert-circle-outline
                   </v-icon>
                 </template>
-                <span v-if="item['job_info-latest_info-fileerror_count']"> There were {{ item['job_info-latest_info-fileerror_count'] }} errors when fetching, so data might be incomplete. </span>
-                <span v-if="!item['field_info-latest']"> Unable to fetch this source </span>
+                <span v-if="item['job_info-latest_info-fileerror_count']"> There were {{ item['job_info-latest_info-fileerror_count'] }} errors when collecting, so data might be incomplete. </span>
+                <span v-if="!item['field_info-latest']"> Unable to collect this source </span>
               </v-tooltip>
             </template>
             <template v-slot:item.job_info-latest_info-finish_time="{ item }">
@@ -143,7 +143,7 @@ export default {
         { text: 'Info', value: 'scraper_info-extra_info-Domain', width: 200 },
         { text: 'Contracting Processes', value: 'table_stats-release' },
         { text: 'Download Formats', value: 'download_links', sortable: false },
-        { text: 'Last Fetched', value: 'job_info-latest_info-finish_time' }
+        { text: 'Last Collected', value: 'job_info-latest_info-finish_time' }
       ],
       search: '',
       error: undefined,

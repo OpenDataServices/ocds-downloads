@@ -174,11 +174,11 @@ The processing pipeline includes the following steps:
 
 * Create a PostgreSQL database schema named \`<data_source>_process\` where \`data_source\` is the name of the data source.
 
-#### Scrape
+#### Collect
 
 * Use [Kingfisher Collect](https://kingfisher-collect.readthedocs.io/en/latest/) to download data from the source and save it to a local flat file.
 * Load data from the flat file into the \`_scrape_data\` table.
-* Load scrape logs and statistics into the \`_job_info\` table.
+* Load collection logs and statistics into the \`_job_info\` table.
 
 #### Create base tables
 
