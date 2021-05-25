@@ -5,7 +5,7 @@
       color="red"
       absolute
     >
-      <span class="white--text"><span class="hidden-xs-only"> Tool in alpha. </span> Do not rely on data within this page to be updated. </span>
+      <span class="white--text"><span class="hidden-xs-only"> Tool in beta. </span> Do not rely on data within this page to be updated. </span>
     </v-system-bar>
     <v-app-bar
       app
