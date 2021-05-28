@@ -6,7 +6,7 @@ Choose a data source and format to download. Click on each source for more infor
 
 Data is collected weekly using [Kingfisher Collect](https://kingfisher-collect.readthedocs.io/en/latest/) and processed using [Apache Airflow](https://airflow.apache.org/). Check the [Airflow dashboard](https://ocdsdata.opendataservices.coop/) for more information on the status of the pipeline for each data source. Learn more about the [processing pipeline](/processing-pipeline).
 
-This website is in alpha and is maintained on best-efforts basis.
+This website is in beta and is provided on a best-efforts basis by **Open Data Services Co-operative**. Find out more [about our work](https://opendataservices.coop/) and get [in touch](https://opendataservices.coop/#contact).
 `
 export { homeText }
 
