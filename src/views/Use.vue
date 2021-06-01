@@ -48,7 +48,6 @@
                     <td> <vue-markdown :source="replaceVersionLang(field.description)"></vue-markdown></td>
                   </tr>
                 </tbody>
-                <pre>{{fieldExample}}</pre>
               </template>
             </v-simple-table>
             <v-divider class="mb-4"/>
@@ -70,8 +69,8 @@
                 </thead>
                 <tbody>
                   <tr
-                    v-for="row in releases.rows"
-                    :key="row"
+                    v-for="(row, row_index) in releases.rows"
+                    :key="row_index"
                   >
                     <td v-for="(cell, index) in row" :key="index">{{ cell }}</td>
                   </tr>
@@ -97,8 +96,8 @@
                 </thead>
                 <tbody>
                   <tr
-                    v-for="row in awards.rows"
-                    :key="row"
+                    v-for="(row, row_index) in awards.rows"
+                    :key="row_index"
                   >
                     <td v-for="(cell, index) in row" :key="index">{{ cell }}</td>
                   </tr>

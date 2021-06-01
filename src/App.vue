@@ -76,6 +76,7 @@
           </router-link>
 
           <v-spacer></v-spacer>
+          <a href="https://opendataservices.coop/"><img src="@/assets/developed_by.png" width="130px" class="mr-4"  /></a>
         </v-container>
       </v-col>
     </v-row>
