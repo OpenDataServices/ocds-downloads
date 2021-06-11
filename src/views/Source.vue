@@ -11,6 +11,68 @@
               </v-card-title>
               <v-card-text>
                 <p> <b> Last Updated: </b> {{sourceData["field_info-latest_date"]}} </p>
+
+                <p v-if="originalSourceData.license"> <b> License: </b> <a :href="originalSourceData.license"> {{ originalSourceData.licenseCode || originalSourceData.license }} </a> </p>
+
+                <p v-if="originalSourceData.package_info.publishers && originalSourceData.package_info.publishers.length < 2">
+                  <b> Publisher: </b>
+                  <span v-for="(publisher, index) in originalSourceData.package_info.publishers" :href="publisher[1] || ''" :key="index">
+                    <a v-if="publisher[1]" :href="publisher[1]">
+                      {{ publisher[0] || publisher[1] }}
+                    </a>
+                    <span v-else>
+                      {{ publisher[0] || publisher[1]}}
+                    </span>
+                    <br/>
+                  </span>
+                </p>
+                <span v-if="originalSourceData.package_info.publishers && originalSourceData.package_info.publishers.length >= 2">
+                  <v-dialog
+                    v-model="dialog"
+                    width="600px"
+                  >
+                    <template v-slot:activator="{ on, attrs }">
+                      <p>
+                        <b>Publishers: </b>
+                        <a
+                          color="primary"
+                          dark
+                          v-bind="attrs"
+                          v-on="on"
+                        >
+                          See all publishers
+                        </a>
+                      </p>
+                    </template>
+                    <v-card>
+                      <v-card-title>
+                        Publishers
+                      </v-card-title>
+                      <v-card-text>
+                        <span v-for="(publisher, index) in originalSourceData.package_info.publishers" :href="publisher[1] || ''" :key="index">
+                          <a v-if="publisher[1]" :href="publisher[1]">
+                            {{ publisher[0] || publisher[1] }}
+                          </a>
+                          <span v-else>
+                            {{ publisher[0] || publisher[1]}}
+                          </span>
+                          <br/>
+                        </span>
+                      </v-card-text>
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn
+                          color="green darken-1"
+                          text
+                          @click="dialog = false"
+                        >
+                          Close
+                        </v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+                </span>
+
                 <p> Check which tables and fields are included in this data source and choose a format to download. </p>
 
                 <p> Read the <a :href="sourceData['scraper_info-docs_link']">Kingfisher Collect spider documentation</a> for more information about this data source.
@@ -331,6 +393,7 @@ export default {
       fieldInfo: { empty: true },
       fieldTypes: [],
       noteBookUrl: '',
+      dialog: false,
       fetchInfoDialog: false,
       sourceText,
       key_log_files: ['scrape', 'compile_releases', 'create_base_tables', 'release_object', 'schema_analysis', 'postgres_tables']

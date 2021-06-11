@@ -48,13 +48,23 @@
                 <span v-if="item['job_info-latest_info-fileerror_count']"> There were {{ item['job_info-latest_info-fileerror_count'] }} errors when collecting, so data might be incomplete. </span>
                 <span v-if="!item['field_info-latest']"> Unable to collect this source </span>
               </v-tooltip>
+
             </template>
             <template v-slot:item.job_info-latest_info-finish_time="{ item }">
               {{ day_from_now(item['job_info-latest_info-finish_time']) }}
             </template>
+            <template v-slot:item.license="{ item }">
+              <a v-if="item.license" :href="item.license">
+                {{ item.licenseCode || 'license link' }}
+              </a>
+            </template>
+            <template v-slot:item.scraper_info-extra_info-Domain="{ item }">
+              {{ item['scraper_info-extra_info-Domain'] }}
+            </template>
             <template v-slot:item.table_stats-release="{ item }">
               {{ (item['table_stats-release'] || 0).toLocaleString() }}
             </template>
+
             <template v-slot:item.download_links="{ item }">
               <v-chip
                 class="ma-1"
@@ -139,11 +149,12 @@ export default {
     return {
       headers: [
         { text: 'OCDS Source', value: 'source', width: 200 },
+        { text: 'License', value: 'license', width: 100 },
         { text: 'Country/Category', value: 'scraper_info-category' },
         { text: 'Info', value: 'scraper_info-extra_info-Domain', width: 200 },
-        { text: 'Contracting Processes', value: 'table_stats-release' },
+        { text: 'Processes', value: 'table_stats-release', width: 120 },
         { text: 'Download Formats', value: 'download_links', sortable: false },
-        { text: 'Last Collected', value: 'job_info-latest_info-finish_time' }
+        { text: 'Collected', value: 'job_info-latest_info-finish_time' }
       ],
       search: '',
       error: undefined,

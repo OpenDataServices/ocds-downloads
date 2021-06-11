@@ -92,6 +92,7 @@
 <script>
 import axios from 'axios'
 import flatten from 'flat'
+import { licenseLookup } from '@/license'
 
 export default {
   name: 'App',
@@ -106,12 +107,20 @@ export default {
       const response = await axios.get('https://ocdsdata.fra1.digitaloceanspaces.com/metadata/stats.json')
 
       this.originalData = response.data
+
       for (const [key, value] of Object.entries(this.originalData)) {
+        value.license = ''
+        if (value.package_info.licences && value.package_info.licences[0]) {
+          value.license = value.package_info.licences[0]
+          value.licenseCode = licenseLookup[value.license]
+        }
         const flatValue = flatten(value, { delimiter: '-' })
         flatValue.source = key
+        flatValue.original = value
         this.allData.push(flatValue)
       }
     } catch (err) {
+      console.log(err)
     }
   },
   mounted () {
