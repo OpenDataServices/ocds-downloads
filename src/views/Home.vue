@@ -149,7 +149,7 @@ export default {
     return {
       headers: [
         { text: 'OCDS Source', value: 'source', width: 200 },
-        { text: 'License', value: 'license', width: 100 },
+        { text: 'License', value: 'license', width: 155 },
         { text: 'Country/Category', value: 'scraper_info-category' },
         { text: 'Info', value: 'scraper_info-extra_info-Domain', width: 200 },
         { text: 'Processes', value: 'table_stats-release', width: 120 },

@@ -22,7 +22,8 @@ const licenseLookup = {
   'http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/': 'OGL-3',
   'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/': 'OGL-2',
   'http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/': 'OGL-2',
-  'https://www.zppa.org.zm/ocds-license': 'PDDL'
+  'https://www.zppa.org.zm/ocds-license': 'PDDL',
+  'https://creativecommons.org/licenses/by-nc-sa/4.0/': 'CC-BY-NC-SA-4.0'
 }
 
 export { licenseLookup }
