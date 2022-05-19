@@ -110,7 +110,7 @@ export default {
 
       for (const [key, value] of Object.entries(this.originalData)) {
         value.license = ''
-        if (key.split('_')[0] === 'digiwhist') {
+        if (key.split('_')[0] === 'digiwhist' || key.split('_')[1] === 'digiwhist') {
           value.package_info.licences.push('https://creativecommons.org/licenses/by-nc-sa/4.0/')
         }
         if (value.package_info.licences && value.package_info.licences[0]) {
