@@ -5,7 +5,7 @@
       color="red"
       absolute
     >
-      <span class="white--text"><span class="hidden-xs-only"> Tool in beta. </span> Do not rely on data within this page to be updated. </span>
+    <span class="white--text"><span class="hidden-xs-only"> Tool is deprecated and data will be out of date.  Please use <a href="https://data.open-contracting.org/">Official OCDS Data Registry</a></span> </span>
     </v-system-bar>
     <v-app-bar
       app
