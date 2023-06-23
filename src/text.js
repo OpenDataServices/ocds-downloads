@@ -1,5 +1,7 @@
 const homeText = `
 
+**Tool is deprecated and data will be out of date.  Please use [Official OCDS Data Registry](https://data.open-contracting.org/)**
+
 This website collects data published using the [Open Contracting Data Standard (OCDS)](https://standard.open-contracting.org/), converts it to a tabular structure and provides downloads in different formats.
 
 Choose a data source and format to download. Click on each source for more information about its tables, fields and download formats. Learn more about [using the data](/use-the-data).
