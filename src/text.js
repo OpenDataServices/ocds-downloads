@@ -1,6 +1,6 @@
 const homeText = `
 
-**Tool is deprecated and data will be out of date.  Please use [Official OCDS Data Registry](https://data.open-contracting.org/)**
+**Tool is deprecated and data will be out of date.  Please use [Official OCDS Data Registry](https://data.open-contracting.org/). Data will be deleted on 1st September 2023.**
 
 This website collects data published using the [Open Contracting Data Standard (OCDS)](https://standard.open-contracting.org/), converts it to a tabular structure and provides downloads in different formats.
 
