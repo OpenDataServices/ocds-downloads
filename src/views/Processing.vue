@@ -2,29 +2,19 @@
   <v-container>
     <v-row>
       <v-col cols=12 xl=3>
-        <v-card>
-          <v-card-title>
-            Processing Pipeline
-          </v-card-title>
-          <v-card-text class="md-content">
-           <vue-markdown :source="processingText[0]"></vue-markdown>
+        <v-card elevation="0" color="white">
+          <v-card-text class="body-1">
+            <vue-markdown :source="homeText"></vue-markdown>
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col cols=12 xl=9>
-        <v-card>
-          <v-card-text class="md-content">
-           <vue-markdown :source="processingText[1]"></vue-markdown>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
+  </v-row>
   </v-container>
 </template>
 
 <script>
 import VueMarkdown from 'vue-markdown-render'
-import { processingText } from '@/text'
+import { homeText } from '@/text'
 
 export default {
   components: {
@@ -32,7 +22,7 @@ export default {
   },
   data () {
     return {
-      processingText
+      homeText
     }
   }
 }

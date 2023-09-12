@@ -1,14 +1,6 @@
 const homeText = `
 
-**Tool is deprecated and data will be out of date.  Please use [Official OCDS Data Registry](https://data.open-contracting.org/). Data will be deleted on 1st September 2023.**
-
-This website collects data published using the [Open Contracting Data Standard (OCDS)](https://standard.open-contracting.org/), converts it to a tabular structure and provides downloads in different formats.
-
-Choose a data source and format to download. Click on each source for more information about its tables, fields and download formats. Learn more about [using the data](/use-the-data).
-
-Data is collected weekly using [Kingfisher Collect](https://kingfisher-collect.readthedocs.io/en/latest/) and processed using [Apache Airflow](https://airflow.apache.org/). Check the [Airflow dashboard](https://ocdsdata.opendataservices.coop/) for more information on the status of the pipeline for each data source. Learn more about the [processing pipeline](/processing-pipeline).
-
-This website is in beta and is provided on a best-efforts basis by **Open Data Services Co-operative**. Find out more [about our work](https://opendataservices.coop/) and get [in touch](https://opendataservices.coop/#contact).
+**Tool is deprecated and data will be out of date.  Please use [Official OCDS Data Registry](https://data.open-contracting.org/). Data has been deleted.**
 `
 export { homeText }
 
@@ -62,16 +54,10 @@ Follow the instructions in the notebook to query the data.
 export { sourceText }
 
 const aboutText = [`
+
+**Tool is deprecated and data will be out of date.  Please use [Official OCDS Data Registry](https://data.open-contracting.org/). Data has been deleted.**
+
 This website was created as a research project by [Open Data Services Co-operative](https://opendataservices.coop/).
-
-See code and contribute on github for the [processing pipleline](https://github.com/OpenDataServices/ocdsdata) and [this website](https://github.com/OpenDataServices/ocds-downloads).
-`,
-
-`The aim of this website is to test approaches to providing:
-
-* Access to open data in quick-to-use formats, including BigQuery and Colaboratory Notebooks.
-* Easy-to-use tabular representations of JSON Schema defined JSON data.
-* Transparent processing pipelines that can deal with large datasets.
 `]
 
 export { aboutText }
